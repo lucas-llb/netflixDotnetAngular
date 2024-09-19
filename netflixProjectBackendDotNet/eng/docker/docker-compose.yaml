@@ -1,0 +1,21 @@
+version: "3.4"
+
+networks:
+  backend:
+    driver: bridge
+
+
+volumes:
+  netflixprojectdotnet.postgres-database:
+
+services:
+  netflixProjectDotnetDB:
+    image: postgres:11.12
+    volumes:
+      - netflixprojectdotnet.postgres-database:/var/lib/postgresql/data
+    env_file:
+      - ./database.env
+    ports:
+      - "15432:5432"
+    networks:
+      - backend

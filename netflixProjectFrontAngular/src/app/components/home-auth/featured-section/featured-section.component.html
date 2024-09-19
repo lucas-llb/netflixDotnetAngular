@@ -1,0 +1,31 @@
+<ng-container *ngIf="error; else content">
+    <div>{{ error }}</div>
+  </ng-container>
+  <ng-template #content>
+    <ng-container *ngIf="!data; else seriesList">
+      <app-page-spinner></app-page-spinner>
+    </ng-container>
+    <ng-template #seriesList>
+      <app-header-auth></app-header-auth>
+      <div *ngFor="let serie of data" >
+        <div [ngStyle]="{
+          'background-image': 'linear-gradient(to bottom, #6666661a, #151515), url(' + backendApiUrl + '/' + serie.thumbnailUrl + ')',
+          'background-size': 'cover',
+          'background-position': 'center',
+          'height': '480px'}">
+
+          <div class="pt-4 container">
+            <p class="title">{{ serie!.name }}</p>
+            <p class="description">{{ serie!.synopsis }}</p>
+            <a [routerLink]="['/series', serie.id]">
+              <button outline color="light" class="button">
+                ACCESS NOW
+                <img src="buttonPlay.svg" alt="buttonImg" class="buttonImg"/>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+  
