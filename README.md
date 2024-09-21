@@ -5,5 +5,5 @@
 <p>Run the follow command in the main folder</p>
 <br>
 <code>docker compose up -d</code>
-<br>
+</br>
 <p>Enjoy the application on http://localhost:4200/</p>
