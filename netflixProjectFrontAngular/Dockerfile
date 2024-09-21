@@ -1,5 +1,5 @@
 
-# Etapa 1: Construção da aplicação Angular
+# Etapa 1: Building angular app
 FROM node:18-alpine as build
 
 WORKDIR /app
@@ -10,13 +10,10 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Etapa 2: Servir a aplicação com Nginx
+# Etapa 2: Serving with Nginx
 FROM nginx:alpine
 
 COPY --from=build /app/dist/netflix-angular/browser/ /usr/share/nginx/html/
-
-# Copiar configuração customizada do Nginx, se necessário
-# COPY nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
