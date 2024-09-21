@@ -19,7 +19,6 @@ public static class InfraExtension
     private static IServiceCollection AddContext(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString(ConnectionString);
-
         services.AddDbContext<ContextDB>(options => options.UseNpgsql(connectionString));
         return services;
     }
@@ -28,6 +27,7 @@ public static class InfraExtension
     {
         using var scope = services.BuildServiceProvider().CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<ContextDB>();
+        context.Database.EnsureCreated();
         //context.Database.Migrate();
         return services;
     }

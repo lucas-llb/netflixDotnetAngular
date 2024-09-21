@@ -1,12 +1,16 @@
 using netflixProjectBackendDotNet.Api.Extensions;
 using netflixProjectBackendDotNet.Api.Middlewares;
 using Serilog;
+
 internal class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        builder.Host.UseSerilog((context, builder) => builder.WriteTo.Console());
+        builder.Host.UseSerilog((context, builder) => {
+            builder.WriteTo.Console();
+            builder.WriteTo.File($"Logs/netflix-{DateTime.Now.ToShortDateString()}.txt");
+            });
 
         // Add services to the container.
 
@@ -35,9 +39,19 @@ internal class Program
         app.UseHttpsRedirection();
         app.UseCors("allow");
         app.UseAuthorization();
-
         app.MapControllers();
+        app.MapHealthChecks("/health");
+        
 
-        app.Run();
+        try
+        {
+            Log.Information("Running app at : ", DateTime.Now.ToShortTimeString());
+            await app.RunAsync();
+        }
+        catch(Exception ex)
+        {
+            Log.Error("Error during ruinning application : ", ex.Message);
+            await app.StopAsync();
+        }
     }
 }
