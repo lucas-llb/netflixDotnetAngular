@@ -1,4 +1,9 @@
-# netflixDotnetAngular
+# Netflix clone with Dotnet and Angular
+
+Based on the other projects:
+(Angular is not 100% finished, missing css corrections)
+https://github.com/lucas-llb/netflixProjectFrontAngular
+https://github.com/lucas-llb/netflixProjectBackendDotNet
 
 ## How to run
 <p> Make sure you have docker installed on your pc. </p>
