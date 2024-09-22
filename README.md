@@ -12,4 +12,4 @@ https://github.com/lucas-llb/netflixProjectBackendDotNet<br>
 <code>docker compose up -d</code>
 <br>
 <br>
-<p>Enjoy the application on http://localhost/</p>
+<p>Enjoy the application on http://localhost/ </p>
