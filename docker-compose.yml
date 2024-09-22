@@ -45,7 +45,7 @@ services:
       context: ./netflixProjectFrontAngular
       dockerfile: Dockerfile
     ports:
-      - "4200:80"
+      - "80:80"
     networks:
       - web
     depends_on:
