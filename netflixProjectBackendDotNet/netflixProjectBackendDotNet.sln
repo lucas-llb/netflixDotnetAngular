@@ -9,7 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netflixProjectBackendDotNet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netflixProjectBackendDotNet.Infra", "netflixProjectBackendDotNet.Infra\netflixProjectBackendDotNet.Infra.csproj", "{D7FEDEA1-61F9-4482-8A5B-2E2EE4A95762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflixProjectBackendDotNet.IoC", "netflixProjectBackendDotNet.IoC\netflixProjectBackendDotNet.IoC.csproj", "{5C4C268A-1FD8-4F0C-B11A-992022B5063A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netflixProjectBackendDotNet.IoC", "netflixProjectBackendDotNet.IoC\netflixProjectBackendDotNet.IoC.csproj", "{5C4C268A-1FD8-4F0C-B11A-992022B5063A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ABE16741-DC25-4A79-B377-1643D8BEF5D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflixProjectBackendDotNet.Api.Tests", "tests\netflixProjectBackendDotNet.Api.Tests\netflixProjectBackendDotNet.Api.Tests.csproj", "{BB9C196E-DDA5-45F5-A1C9-53F0926EEA0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflixProjectBackendDotNet.Domain.Tests", "tests\netflixProjectBackendDotNet.Domain.Tests\netflixProjectBackendDotNet.Domain.Tests.csproj", "{58BA83AC-E2A9-4D39-BFBC-061B48DCAA0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflixProjectBackendDotNet.Infra.Tests", "tests\netflixProjectBackendDotNet.Infra.Tests\netflixProjectBackendDotNet.Infra.Tests.csproj", "{1A7B2AF5-9A1B-4323-910A-E14A8DFD5789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +41,26 @@ Global
 		{5C4C268A-1FD8-4F0C-B11A-992022B5063A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C4C268A-1FD8-4F0C-B11A-992022B5063A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C4C268A-1FD8-4F0C-B11A-992022B5063A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9C196E-DDA5-45F5-A1C9-53F0926EEA0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9C196E-DDA5-45F5-A1C9-53F0926EEA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9C196E-DDA5-45F5-A1C9-53F0926EEA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9C196E-DDA5-45F5-A1C9-53F0926EEA0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58BA83AC-E2A9-4D39-BFBC-061B48DCAA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58BA83AC-E2A9-4D39-BFBC-061B48DCAA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58BA83AC-E2A9-4D39-BFBC-061B48DCAA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58BA83AC-E2A9-4D39-BFBC-061B48DCAA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7B2AF5-9A1B-4323-910A-E14A8DFD5789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7B2AF5-9A1B-4323-910A-E14A8DFD5789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7B2AF5-9A1B-4323-910A-E14A8DFD5789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7B2AF5-9A1B-4323-910A-E14A8DFD5789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB9C196E-DDA5-45F5-A1C9-53F0926EEA0F} = {ABE16741-DC25-4A79-B377-1643D8BEF5D0}
+		{58BA83AC-E2A9-4D39-BFBC-061B48DCAA0D} = {ABE16741-DC25-4A79-B377-1643D8BEF5D0}
+		{1A7B2AF5-9A1B-4323-910A-E14A8DFD5789} = {ABE16741-DC25-4A79-B377-1643D8BEF5D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C44145C-1470-432D-8DE8-8C71529342F4}

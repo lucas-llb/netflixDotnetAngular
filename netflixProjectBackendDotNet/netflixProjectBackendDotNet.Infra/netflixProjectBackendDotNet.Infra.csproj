@@ -20,6 +20,10 @@
     <ProjectReference Include="..\netflixProjectBackendDotNet.Domain\netflixProjectBackendDotNet.Domain.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="..\tests\netflixProjectBackendDotNet.Infra.Tests\netflixProjectBackendDotNet.Infra.Tests.csproj" />
+	</ItemGroup>
+	
   <ItemGroup>
     <Folder Include="Migrations\" />
   </ItemGroup>

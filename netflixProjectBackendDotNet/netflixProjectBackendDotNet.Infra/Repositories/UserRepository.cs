@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using netflixProjectBackendDotNet.Domain.Entities.Episode;
 using netflixProjectBackendDotNet.Domain.Entities.User;
-using netflixProjectBackendDotNet.Domain.Entities.WatchTime;
 using netflixProjectBackendDotNet.Domain.Repositories;
 using netflixProjectBackendDotNet.Infra.Context;
 using BC = BCrypt.Net.BCrypt;
@@ -48,7 +47,7 @@ internal class UserRepository : IUserRepository
         return CheckPassword(userPassword, password);
     }
 
-    public async Task<bool> LoginAsync(string email,  string password)
+    public async Task<bool> LoginAsync(string email, string password)
     {
         var user = await GetByEmailAsync(email);
         if (user is null)
@@ -98,7 +97,7 @@ internal class UserRepository : IUserRepository
 
     public async Task<IEnumerable<EpisodeEntity>?> GetUserWithWatchListAsync(int id)
     {
-        var data =  await _dbSet.AsNoTracking()
+        var data = await _dbSet.AsNoTracking()
             .Include(x => x.WatchTimes)
                 .ThenInclude(x => x.Episode)
                 .ThenInclude(x => x.Serie)
