@@ -32,7 +32,7 @@ public class LikesController : ControllerBase
     }
 
     [HttpDelete("{serieId:int}")]
-    public async Task<IActionResult> DeleteFavoriteAsync([FromRoute] int serieId)
+    public async Task<IActionResult> DeleteLikeAsync([FromRoute] int serieId)
     {
         var userId = HttpContext.GetUserId();
         if (userId is null)

@@ -104,7 +104,6 @@ public class SeriesController(ISerieRepository serieRepository, IWebHostEnvironm
 
     [HttpGet("search")]
     [ProducesResponseType(typeof(SerieSearchResponse), 200)]
-
     [Authorize]
     public async Task<IActionResult> GetSeriesByNameAsync([FromQuery]string name, [FromQuery]PaginatedRequest paginatedRequest)
     {
@@ -126,6 +125,11 @@ public class SeriesController(ISerieRepository serieRepository, IWebHostEnvironm
     private async Task<string> SaveImageAsync(SerieRequestBase request, IFormFile image)
     {
         var path = Path.Combine(environment.WebRootPath, "thumbnails/", $"serie-{request.Name}/", image.FileName);
+
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
 
         using (FileStream stream = new FileStream(path, FileMode.Create))
         {
