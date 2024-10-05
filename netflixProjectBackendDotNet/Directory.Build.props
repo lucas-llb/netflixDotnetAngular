@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+    <InternalsVisibleTo Include="netflixProjectBackendDotNet.Api.Tests" />
+    <InternalsVisibleTo Include="netflixProjectBackendDotNet.Domain.Tests" />
+    <InternalsVisibleTo Include="netflixProjectBackendDotNet.Infra.Tests" />
+  </ItemGroup>
+</Project>

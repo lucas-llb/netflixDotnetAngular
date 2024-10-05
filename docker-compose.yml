@@ -5,14 +5,14 @@ networks:
   web:
 
 volumes:
-  netflixprojectdotnetV2.postgres-database:
+  netflixdotnet.postgres-database:
 
 services:
   netflixProjectDotnetDB:
     container_name: postgres
     image: postgres:11.12
     volumes:
-      - netflixprojectdotnetV2.postgres-database:/var/lib/postgresql/data
+      - netflixdotnet.postgres-database:/var/lib/postgresql/data
     env_file:
       - ./database.env
     ports:
